@@ -1,0 +1,146 @@
+/**index.wxss**/
+
+.scroll{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 750rpx;
+  display: flex;
+  background-color: #F8F8F8;
+}
+.view-item{ 
+  display: flex;    
+  flex:1;
+  height: 100rpx; 
+  justify-content: center;   
+  align-items: center;   
+}
+.now-item{
+  display: flex;    
+  flex:1;
+  height: 100rpx; 
+  justify-content: center;   
+  align-items: center;
+  color: #ff0000;
+  border-bottom: 2px solid #ff0000;   
+}
+.user_box{
+  display: flex;
+  height: 80rpx;
+  padding: 10rpx 25rpx;
+}
+.user{
+  flex: 4;
+  display: flex;
+  justify-content: flex-start;
+}
+.user_pic{
+  width:80rpx;
+  height: 80rpx;  
+}
+.profile_image{
+  width: 100%;
+  height: 100%;
+}
+.user_name{
+  height: 80rpx;
+  padding-left: 25rpx;
+  color: #444;  
+}
+.date{
+  font-size: 24rpx;
+}
+.detail{
+  flex:1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.detail_btn{
+  width: 72rpx; 
+  height: 60rpx;
+}
+.box{
+  padding: 0 25rpx;
+  background-color: #EAEAEA;
+}
+.content{
+  margin-bottom: 35rpx;
+  background-color: #ffffff;
+}
+.con_main{
+   padding: 0 25rpx;
+}
+.text{
+  padding: 20rpx 25rpx;
+  font-size: 32rpx;
+  line-height: 48rpx;
+}
+.play{
+  width: 700rpx;
+}
+.content_pic{
+  position: relative;
+  height: 240px;  
+  overflow: hidden;
+}
+.bigImg{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 700rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 40rpx;
+  color: #ffffff;
+}
+.pic_wrap{
+  padding-bottom: 25rpx;
+  display: flex;
+  justify-content: center;
+}
+.audio_wrap{
+  padding-bottom: 25rpx;
+  display: flex;
+  /* justify-content: center;  */
+  /* align-items: center; */
+}
+.bot{
+  display: flex;
+  border-top: 1px solid #ccc;
+  height: 80rpx;
+  padding: 10rpx 0;
+}
+.bot_main{
+  flex:1;
+  display: flex;
+  justify-content: center
+}
+.bot_main view{
+  flex:1;
+  display: flex;
+  align-items: center;
+}
+.bot_pic{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.bot_pic image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.do{
+  flex: 1;
+  color: #999;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+swiper{
+  overflow: auto;
+  padding-top: 120rpx;
+}

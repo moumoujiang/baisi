@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/center/center",
+    "pages/concerm/concerm",
+    "pages/recommend/recommend",
+    
+    "pages/index/index",
+    
+    "pages/detail/detail",
+    "pages/img/img",
+    "pages/login/login",
+    "pages/gotologin/gotologin"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#222",
+    "navigationBarTitleText": "百思不得",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "selectedColor": "#515151",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/tabBar/tabBar_essence_icon.png",
+      "selectedIconPath": "images/tabBar/tabBar_essence_click_icon.png"
+    },
+    {
+      "pagePath": "pages/recommend/recommend",
+      "text": "推荐",
+      "iconPath": "images/tabBar/tabBar_friendTrends_icon.png",
+      "selectedIconPath": "images/tabBar/tabBar_friendTrends_click_icon.png"
+    },
+    {
+      "pagePath": "pages/concerm/concerm",
+      "text": "关注",
+      "iconPath": "images/tabBar/tabBar_me_icon.png",
+      "selectedIconPath": "images/tabBar/tabBar_me_click_icon.png"
+    },
+    {
+      "pagePath": "pages/center/center",
+      "text": "我的",
+      "iconPath": "images/tabBar/tabBar_new_icon.png",
+      "selectedIconPath": "images/tabBar/tabBar_new_click_icon.png"
+    }
+    ]
+  }
+}

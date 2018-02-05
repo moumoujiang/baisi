@@ -1,0 +1,20 @@
+<view class='box'>
+  <view class='sign'>
+    <view class='user'>
+      <view class='user_pic'><image src="{{src}}" mode='aspectFill' bindtap='change_pic'></image></view>
+      <view class='login' bindtap='sign'>{{username}}</view>
+    </view>
+    <view>></view>
+  </view>
+  <view class="download">
+    <view>离线下载</view>
+    <view>></view>
+  </view>
+</view>
+<view class='square_list'>
+  <view wx:for="{{list}}" class='square'>
+    <view class='icon'><image src='{{item.icon}}' aspectFit></image></view>
+    <view class='title'>{{item.name}}</view>
+  </view>
+
+</view>

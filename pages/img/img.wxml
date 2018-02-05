@@ -1,0 +1,5 @@
+<view class='pic'>
+  <image src='{{src}}' class='play' style='height:{{height/(width/700)}}rpx' aspectFill bindtap='downloadPic'>
+
+  </image>
+</view>

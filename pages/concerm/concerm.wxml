@@ -1,0 +1,24 @@
+<!--pages/concerm/concerm.wxml-->
+<view wx:if="{{user}}">
+  <view class='header'>
+    <view class='cat'>
+      <image src='../../images/other/header_cry_icon.png' aspectFill></image>
+    </view>
+  </view>
+  <view class='header'>
+    <view class='content'>
+      <view>快来登录吧，关注百思最in牛人</view>
+      <view>好友动态让你过把瘾~</view>
+      <view>欧耶~~~</view>
+    </view>
+  </view>
+  
+  <view class='header'>
+    <button type="primary" size="default"
+         bindtap="primary" class='btn'> 立即登录/注册 </button>
+  </view>
+  
+  
+</view>
+
+

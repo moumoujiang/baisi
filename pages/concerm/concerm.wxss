@@ -1,0 +1,29 @@
+/* pages/concerm/concerm.wxss */
+page{
+  background-color: #EAEAEA;
+}
+.header{
+  display: flex;
+  justify-content: center;
+}
+.cat{
+  width: 200rpx;
+  height:200rpx;
+  padding-top: 200rpx;
+}
+.cat image{
+  width: 200rpx;
+  height:200rpx;
+}
+.content{
+  color: #666;
+  padding: 100rpx 0;
+}
+.content view{
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 40rpx;
+}
+.btn{
+  width: 80%;
+}

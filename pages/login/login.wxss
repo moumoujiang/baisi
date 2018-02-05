@@ -1,0 +1,39 @@
+page{
+  background-color:#483354;
+}
+.form{
+  padding-top: 250rpx;
+  display: flex;
+  justify-content: center;
+}
+form{
+  width: 80%;
+}
+.username{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 25rpx;
+  border: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+}
+.pwd{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 25rpx;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+}
+.sub{
+  margin-top: 20px;
+  background-color: #DD6263;
+  color: #ffffff;
+}
+.do{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #dddddd;
+}

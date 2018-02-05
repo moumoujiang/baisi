@@ -1,0 +1,73 @@
+page{
+  background-color: #EAEAEA;
+}
+.box{
+  color: #444;
+}
+.sign{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120rpx;
+  padding: 0 25rpx;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  margin-top: 20px;
+  background-color: #ffffff;
+}
+.user{
+  display: flex;
+  height: 100rpx;
+}
+.user_pic{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.user_pic image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.login{
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 25rpx;
+}
+.download{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120rpx;
+  padding: 0 25rpx;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  margin: 20px 0;
+  background-color: #ffffff;
+}
+.square_list{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+.square{
+  width:25%;
+  padding: 25rpx 0;
+  box-shadow: 1px 1px 0px 0px #EAEAEA;
+}
+.icon{
+  display: flex;
+  justify-content: center;
+  height: 140rpx;
+}
+.icon image{
+  width: 140rpx;
+  height: 140rpx;
+}
+.title{
+  text-align: center;
+  padding-top: 25rpx;
+  font-size: 30rpx;
+}
+
+

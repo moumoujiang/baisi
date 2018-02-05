@@ -1,0 +1,321 @@
+<!--index.wxml-->
+<view>
+<!--头部导航  -->
+   <view  class='scroll'>
+      <view  wx:for="{{sel}}" 
+      data-index='{{index}}' 
+      class="{{current==index?'now-item':'view-item'}}"         
+      bindtap='sel'>
+      {{item}}
+      </view>
+   </view>
+
+  <!-- 内容 -->
+   <swiper indicator-dots="{{false}}"
+  autoplay="{{false}}"  duration="1000" current="{{current}}" 
+  style="height: {{clientHeight+'px'}}" bindchange='swiperChange'>
+  <!--全部  -->
+  <block>
+    <swiper-item>
+      <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">  
+      <view class='box'> 
+        <view class='content' wx:for="{{all}}">
+      
+          <view class='user_box'>
+            <view class='user'>
+              <view class='user_pic'><image src='{{item.profile_image}}' class='profile_image' ></image></view>
+              <view class="user_name">
+                <view>{{item.name}}</view>
+                <view class='date'>{{item.created_at}}</view>
+              </view>
+            </view>
+            <view class="detail" bindtap='detail' data-id='{{item.id}}'>
+              <image src="../../images/index/morebtnnormal.png" class='detail_btn' aspectFit></image>
+            </view>
+          </view>
+          <view class='content_main'>
+            <view class='con_main'>
+                <view class='text'>{{item.text}}</view>
+                <view wx:if="{{item.type==10}}" class='pic_wrap'>
+                  <view class='content_pic' bindtap='lookImg' data-url='{{item.cdn_img}}' data-height='{{item.height}}' data-width='{{item.width}}'>
+                    <image src='{{item.cdn_img}}' class='play' style='height:{{item.height/(item.width/700)}}rpx' aspectFill></image>
+                    <view class='bigImg'>点击查看大图</view>
+                  </view>
+                </view>
+                <!-- <view wx:elif="{{item.type==41}}" class='pic_wrap'>
+                 <video src="{{item.videouri}}" style='height:{{item.height/(item.width/700)}}rpx' aspectFit   controls class='play' fixed="{{true}}"></video>
+                </view> -->
+                <view  wx:elif="{{item.type==31}}" class='audio_wrap'>
+                <audio id="myAudio" poster='{{item.bimageuri}}' controls class='play' src="{{item.voiceuri}}"></audio>
+               </view>
+                
+            </view>
+            <view class='bot'>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellDing.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.love}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellCai.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.cai}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellShare.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.repost}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellComment.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.comment}}</view>
+              </view>
+            </view>
+          </view>
+        </view>  
+      
+      </view>
+       </scroll-view>  
+    </swiper-item>
+  </block>
+  <!--视频  -->
+  <block>
+     <swiper-item>
+     <!-- <scroll-view scroll-y="{{true}}" style="height: {{clientHeight+'px'}}">  -->
+      <!-- <view class='box' style="height: {{clientHeight?clientHeight+'px':'auto'}};overflow: auto;"> 
+        <view class='content' wx:for="{{video}}">
+      
+          <view class='user_box'>
+            <view class='user'>
+              <view class='user_pic'><image src='{{item.profile_image}}' class='profile_image' ></image></view>
+              <view class="user_name">
+                <view>{{item.name}}</view>
+                <view class='date'>{{item.created_at}}</view>
+              </view>
+            </view>
+            <view class="detail" bindtap='detail' data-id='{{item.id}}'>
+              <image src="../../images/index/morebtnnormal.png" class='detail_btn' aspectFit></image>
+            </view>
+          </view>
+          <view class='content_main'>
+            <view class='con_main'>
+                <view class='text'>{{item.text}}</view>
+                <view wx:if="{{item.type==10}}" class='pic_wrap'>
+                  <view class='content_pic'>
+                    <image  src='{{item.cdn_img}}' class='play' style='height:{{item.height/(item.width/280)}}px' aspectFill></image>
+                  </view>
+                </view>
+                <view wx:elif="{{item.type==41}}" class='pic_wrap'>
+                 <video src="{{item.videouri}}" style='height:{{item.height/(item.width/280)}}px' aspectFit   controls class='play' fixed="{{true}}"></video>
+                </view>
+               
+                 <view  wx:elif="{{item.type==31}}" class='audio_wrap'>
+                <audio id="myAudio" poster='{{item.bimageuri}}' controls class='play' src="{{item.voiceuri}}"></audio>
+               </view>
+            </view>
+            <view class='bot'>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellDing.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.love}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellCai.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.cai}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellShare.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.repost}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellComment.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.comment}}</view>
+              </view>
+            </view>
+          </view>
+        </view>  
+      
+      </view> -->
+      <!-- </scroll-view>  -->
+    </swiper-item> 
+  </block>
+  <!--图片  -->
+  <block>
+    <swiper-item>
+     <scroll-view scroll-y="{{true}}" style="height: {{clientHeight+'px'}}"> 
+      <view class='box'> 
+        <view class='content' wx:for="{{pic}}">
+      
+          <view class='user_box'>
+            <view class='user'>
+              <view class='user_pic'><image src='{{item.profile_image}}' class='profile_image' ></image></view>
+              <view class="user_name">
+                <view>{{item.name}}</view>
+                <view class='date'>{{item.created_at}}</view>
+              </view>
+            </view>
+            <view class="detail" bindtap='detail' data-id='{{item.id}}'>
+              <image src="../../images/index/morebtnnormal.png" class='detail_btn' aspectFit></image>
+            </view>
+          </view>
+          <view class='content_main'>
+            <view class='con_main'>
+                <view class='text'>{{item.text}}</view>
+                <view wx:if="{{item.type==10}}" class='pic_wrap'>
+                  <view class='content_pic' bindtap='lookImg' data-url='{{item.cdn_img}}' data-height='{{item.height}}' data-width='{{item.width}}'>
+                    <image src='{{item.cdn_img}}' class='play' style='height:{{item.height/(item.width/700)}}rpx' aspectFill></image>
+                    <view class='bigImg'>点击查看大图</view>
+                  </view>
+                </view>
+                <view wx:elif="{{item.type==41}}" class='pic_wrap'>
+                 <video src="{{item.videouri}}" style='height:{{item.height/(item.width/700)}}rpx' aspectFit   controls class='play'></video>
+                </view>
+               
+                 <view  wx:elif="{{item.type==31}}" class='audio_wrap'>
+                <audio id="myAudio" poster='{{item.bimageuri}}' controls class='play' src="{{item.voiceuri}}"></audio>
+               </view>
+            </view>
+            <view class='bot'>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellDing.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.love}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellCai.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.cai}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellShare.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.repost}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellComment.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.comment}}</view>
+              </view>
+            </view>
+          </view>
+        </view>  
+      
+      </view>
+      </scroll-view> 
+    </swiper-item>
+  </block>
+  <!--段子  -->
+  <block>
+    <swiper-item>
+     <scroll-view scroll-y="{{true}}" style="height: {{clientHeight+'px'}}"> 
+      <view class='box'> 
+        <view class='content' wx:for="{{text}}">
+      
+          <view class='user_box'>
+            <view class='user'>
+              <view class='user_pic'><image src='{{item.profile_image}}' class='profile_image' ></image></view>
+              <view class="user_name">
+                <view>{{item.name}}</view>
+                <view class='date'>{{item.created_at}}</view>
+              </view>
+            </view>
+            <view class="detail" bindtap='detail' data-id='{{item.id}}'>
+              <image src="../../images/index/morebtnnormal.png" class='detail_btn' aspectFit></image>
+            </view>
+          </view>
+          <view class='content_main'>
+            <view class='con_main'>
+                <view class='text'>{{item.text}}</view>
+                <view wx:if="{{item.type==10}}" class='pic_wrap'>
+                  <view class='content_pic'>
+                    <image  src='{{item.cdn_img}}' class='play' style='height:{{item.height/(item.width/280)}}px' aspectFill></image>
+                  </view>
+                </view>
+                <view wx:elif="{{item.type==41}}" class='pic_wrap'>
+                 <video src="{{item.videouri}}" style='height:{{item.height/(item.width/280)}}px' aspectFit   controls class='play'></video>
+                </view>
+               
+                 <view  wx:elif="{{item.type==31}}" class='audio_wrap'>
+                <audio id="myAudio" poster='{{item.bimageuri}}' controls class='play' src="{{item.voiceuri}}"></audio>
+               </view>
+            </view>
+            <view class='bot'>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellDing.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.love}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellCai.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.cai}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellShare.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.repost}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellComment.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.comment}}</view>
+              </view>
+            </view>
+          </view>
+        </view>  
+      
+      </view>
+      </scroll-view> 
+    </swiper-item>
+  </block>
+  <!--声音  -->
+  <block>
+    <swiper-item>
+     <scroll-view scroll-y="{{true}}" style="height: {{clientHeight+'px'}}"> 
+      <view class='box'> 
+        <view class='content' wx:for="{{voice}}">
+      
+          <view class='user_box'>
+            <view class='user'>
+              <view class='user_pic'><image src='{{item.profile_image}}' class='profile_image' ></image></view>
+              <view class="user_name">
+                <view>{{item.name}}</view>
+                <view class='date'>{{item.created_at}}</view>
+              </view>
+            </view>
+            <view class="detail" bindtap='detail' data-id='{{item.id}}'>
+              <image src="../../images/index/morebtnnormal.png" class='detail_btn' aspectFit></image>
+            </view>
+          </view>
+          <view class='content_main'>
+            <view class='con_main'>
+                <view class='text'>{{item.text}}</view>
+                <view wx:if="{{item.type==10}}" class='pic_wrap'>
+                  <view class='content_pic'>
+                    <image  src='{{item.cdn_img}}' class='play' style='height:{{item.height/(item.width/280)}}px' aspectFill></image>
+                  </view>
+                </view>
+                <view wx:elif="{{item.type==41}}" class='pic_wrap'>
+                 <video src="{{item.videouri}}" style='height:{{item.height/(item.width/280)}}px' aspectFit   controls class='play'></video>
+                </view>
+               
+                <view  wx:elif="{{item.type==31}}" class='audio_wrap'>
+                <audio id="myAudio" poster='{{item.bimageuri}}' controls class='play' src="{{item.voiceuri}}"></audio>
+               </view>
+            </view>
+            <view class='bot'>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellDing.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.love}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellCai.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.cai}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellShare.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.repost}}</view>
+              </view>
+              <view class='bot_main'>
+                <view class='bot_pic'><image src="../../images/index/mainCellComment.png" class='bot_btn' aspectFit></image></view>
+                <view class='do'>{{item.comment}}</view>
+              </view>
+            </view>
+          </view>
+        </view>  
+      
+      </view>
+      </scroll-view> 
+    </swiper-item>
+  </block>
+</swiper> 
+
+</view>

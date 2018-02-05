@@ -1,0 +1,80 @@
+.box{
+  display: flex;
+  font-family: '微软雅黑';
+}
+.tabs{
+  flex: 1;
+}
+.tab{
+  margin-bottom: 5rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #666;
+  background-color: #F1F1F1;
+  border-left: 5rpx solid #F1F1F1;
+  text-indent: 35rpx;
+}
+.active{
+  margin-bottom: 5rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #ff0000;
+  background-color: #F1F1F1;
+  border-left: 5rpx solid #ff0000;
+  text-indent: 35rpx;
+}
+.content{
+  flex: 3;
+}
+.item{
+  display: flex;
+  height: 100rpx;
+  padding: 25rpx;
+  border-bottom: 1px solid #f1f1f1;
+}
+.user_info{
+  display: flex;
+  flex: 5;
+  justify-content: flex-start;
+}
+.user_pic{
+  width: 100rpx;
+  height: 100rpx;
+}
+.user_pic image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.user_name{
+  padding: 0 20rpx;
+}
+.nickname{
+  font-size: 36rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.fans{
+  font-size: 32rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #999;
+}
+.user_add{
+  display: flex;
+  flex: 2;
+  height: 100rpx;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+.add_fans{
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 36rpx;
+  text-align: center;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 15rpx;
+  color:#ff0000;
+}

@@ -1,0 +1,16 @@
+<view class='form'>
+  <form bindsubmit="formSubmit">
+    <view class="section">
+      <input class="username" name="username" placeholder="请输入用户名" focus/>
+      <input class="pwd" placeholder="请输入密码" name="pwd" password='{{true}}' maxlength='16'/>
+    </view>
+    
+    <view class="btn-area">
+      <button formType="submit" class='sub'>登录</button>
+    </view>
+    <view class='do'>
+      <view class='regiest'>立即注册</view>
+      <view class='forget'>忘记密码?</view>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,49 @@
+<view wx:if="{{hot[0].content}}">
+  <view class='title'>最热评论</view>
+  <view  wx:for="{{hot}}" class='hot_content'>
+    <view class='user_box'>
+      <view class='user'>
+        <view class='user_pic'><image src='{{item.user.profile_image}}' class='profile_image'></image></view>
+        <view class="user_name">
+          {{item.user.username}}
+        </view>
+      </view>
+      <view class="love">
+        <view class='do'>{{item.user.total_cmt_like_count}}</view>
+        <view class='bot_pic'><image src="../../images/index/mainCellDing.png" class='bot_btn' aspectFit></image></view>
+      </view>
+    </view>
+    <view class='content_main'>
+      <view class='grade'><text>{{item.status}}</text></view>
+      <view class='text'>{{item.content}}</view>
+    </view>
+  </view>
+  <view class='drive'></view>
+</view>
+
+
+<view>
+  <view class='title'>最新评论</view>
+  <!-- <view wx:for="{{content}}">
+  {{item.content}}</view> -->
+  <view wx:for="{{content}}" class='new_content'>
+    <view class='user_box'>
+      <view class='user'>
+        <view class='user_pic'><image src='{{item.user.profile_image}}' class='profile_image' ></image></view>
+        <view class="user_name">
+          {{item.user.username}}
+        </view>
+      </view>
+      <view class="love">
+        <view class='do'>{{item.user.total_cmt_like_count}}</view>
+        <view class='bot_pic'><image src="../../images/index/mainCellDing.png" class='bot_btn' aspectFit></image></view>
+      </view>
+    </view>
+    <view class='content_main'>
+      <view class='grade'><text>{{item.status}}</text></view>
+      <view class='text'>{{item.content}}</view>
+    </view>
+  </view>
+  
+</view>
+

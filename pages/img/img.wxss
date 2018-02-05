@@ -1,0 +1,6 @@
+.pic{
+  padding: 25rpx; 
+}
+.play{
+  width: 700rpx;
+}

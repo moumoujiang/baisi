@@ -1,0 +1,24 @@
+<!--logs.wxml-->
+<view class='box'>
+  <view class='tabs'>
+    <view wx:for="{{list}}" class="{{activeIndex==index? 'active' : 'tab'}}" data-id='{{item.id}}' data-index='{{index}}' bindtap='tabChange'>{{item.name}}</view>
+  </view>
+
+  <view class='content'>
+    <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}};" bindscrolltolower="lower" bindscroll="scroll">
+      <view wx:for="{{userList}}" class='item'>
+        <view class='user_info'>
+          <view class='user_pic'><image src='{{item.header}}'></image></view>
+          <view class='user_name'>
+            <view class='nickname'>{{item.screen_name.length>6?'非法名称':item.screen_name}}</view>
+            <view class="fans">{{item.fans_count}}人关注</view>
+          </view>
+        </view>
+        <view class='user_add'>
+          <view class="add_fans">+关注</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+</view>
